@@ -1,0 +1,46 @@
+{
+  "name": "tswordcount",
+  "version": "1.0.0",
+  "description": "Displays word count from file",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --verbose --coverage",
+    "demo": "npx ts-node src/index.ts src/tests/Fixtures/test01.txt",
+    "demo2": "npx ts-node src/index.ts src/tests/Fixtures/test02.txt"
+  },
+  "author": "David Goodman",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.0.5",
+    "typescript": "^5.0.2"
+  },
+  "jest": {
+    "preset": "ts-jest/presets/js-with-ts",
+    "testEnvironment": "node",
+    "transform": {
+      "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest",
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!variables/.*)",
+      "root"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules",
+      "<rootDir>/dist"
+    ]
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
